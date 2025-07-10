@@ -1,0 +1,27 @@
+[Unit]
+Description=UpTimer - Uptime Monitoring Service
+After=network.target
+
+[Service]
+Type=simple
+User=uptime
+Group=uptime
+WorkingDirectory=/opt/uptime-monitor
+ExecStart=/opt/uptime-monitor/uptime-monitor
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+# Environment variables
+Environment=TZ=UTC
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/uptime-monitor/logs
+
+[Install]
+WantedBy=multi-user.target
