@@ -1,0 +1,39 @@
+server:
+  port: 8080
+  host: "0.0.0.0"
+
+monitoring:
+  interval: 30s
+  timeout: 10s
+  
+websites:
+  - name: "Google"
+    url: "https://www.google.com"
+    method: "GET"
+    expected_status: 200
+  - name: "GitHub"
+    url: "https://github.com"
+    method: "GET"
+    expected_status: 200
+  - name: "Example API"
+    url: "https://jsonplaceholder.typicode.com/posts/1"
+    method: "GET"
+    expected_status: 200
+
+alerts:
+  email:
+    enabled: false
+    smtp_server: "smtp.gmail.com"
+    smtp_port: 587
+    username: ""
+    password: ""
+    from: ""
+    to: []
+  slack:
+    enabled: false
+    webhook_url: ""
+    channel: "#uptime-alerts"
+
+metrics:
+  enabled: true
+  path: "/metrics"
