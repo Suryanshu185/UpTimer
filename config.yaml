@@ -7,16 +7,16 @@ monitoring:
   timeout: 10s
   
 websites:
-  - name: "Google"
-    url: "https://www.google.com"
+  - name: "Docker Hub"
+    url: "https://hub.docker.com/"
     method: "GET"
     expected_status: 200
   - name: "GitHub"
     url: "https://github.com"
     method: "GET"
     expected_status: 200
-  - name: "Example API"
-    url: "https://jsonplaceholder.typicode.com/posts/1"
+  - name: "portfolio"
+    url: "https://portfolio-6orj.vercel.app/"
     method: "GET"
     expected_status: 200
 
